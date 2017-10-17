@@ -18,8 +18,9 @@ jobs:
 
     steps:
       - checkout
-      - setup_remote_docker   # (2)
-          docker_layer_caching: true # (3)
+
+      - setup_remote_docker
+          docker_layer_caching: true
 
       # Download and cache dependencies
       - restore_cache:
