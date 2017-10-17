@@ -25,19 +25,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: yarn ng build --prod --build-optimizer --no-progress
-      - run: yarn ng test --single-run --no-progress
-      - run: |
-         docker login -u $DOCKER_USER -p $DOCKER_PASS
-
-     # build the application container
-     - run: docker build -t simonaco.azurecr.io/angular-cli-nginx:1.0 .
-
-     # deploy the container
-     - run: docker push simonaco.azurecr.io/angular-cli-nginx:1.0
-
-
 
 
 
