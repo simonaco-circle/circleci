@@ -37,8 +37,9 @@ jobs:
       # run tests!
       - run: yarn ng build --prod --build-optimizer --no-progress
       - run: yarn ng test --single-run --no-progress
-      - deploy:
+      - run:
           command: |
-            sh scripts/publish.sh
+            docker build -t simonaco.azurecr.io/angular-cli-nginx:1.0 .
+
 
 
