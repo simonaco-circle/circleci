@@ -40,7 +40,7 @@ jobs:
       - run:
           command: |
             docker build -t simonaco.azurecr.io/angular-cli-nginx:1.0 .
-      -run:
+      - run:
           command: |
             docker login --username $DOCKER_USER --password $DOCKER_PASS simonaco.azurecr.io
 
